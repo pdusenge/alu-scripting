@@ -2,6 +2,7 @@
 """DOC"""
 import requests
 
+
 def number_of_subscribers(subreddit):
     """DOC"""
     reddit_url = "https://www.reddit.com/r/{}/about.json" \
@@ -15,4 +16,3 @@ def number_of_subscribers(subreddit):
         subs = data['subscribers']
         return subs
     return 0
-
