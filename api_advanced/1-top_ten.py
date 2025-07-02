@@ -4,7 +4,7 @@ import requests
 
 
 def top_ten(subreddit):
-    """function"""
+    """Main function"""
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
         headers = {'User-Agent': 'Python:top_ten:v1.0 (by /u/yourusername)'}
         params = {'limit': 10}
