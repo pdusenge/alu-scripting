@@ -15,6 +15,6 @@ def top_ten(subreddit):
         data = response.json()['data']
         for post in data['children'][:10]:
             print(post['data']['title'])
-        sys.stdout.write("OK")
+        sys.stdout.write(OK)
     else:
-        sys.stdout.write("OK")
+        sys.stdout.write(OK)
