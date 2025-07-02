@@ -15,3 +15,4 @@ def number_of_subscribers(subreddit):
         subs = data['subscribers']
         return subs
     return 0
+
