@@ -10,9 +10,23 @@ def top_ten(subreddit):
 
     HEADERS = {"User-Agent": "PostmanRuntime/7.35.0"}
     try:
-        RESPONSE = requests.get(URL, headers=HEADERS, allow_redirects=False)
-        HOT_POSTS = RESPONSE.json().get("data").get("children")
-        [print(post.get('data').get('title')) for post in HOT_POSTS]
-        return
+        response = requests.get(
+            URL,
+            headers=HEADERS,
+        )
+
+        if response.status_code != 200:
+            print(None)
+            return
+
+        data = response.json().get('data', {}).get('children', [])
+
+        if not data:
+            print(None)
+            return
+
+        for post in data:
+            print(post.get('data', {}).get('title'))
+
     except Exception:
         print(None)
